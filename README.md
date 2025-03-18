@@ -17,6 +17,8 @@ Needs a bit of extra config if you wanted to host this as is - mainly around doz
 - Download?
 - Music player   
   - nice to have: gen ai shaders based on music 'mood' 
+  - just to learn a bit about AI, and RAG stack, build a chat interface where you can ask for songs in your lib      
+    based on some lyrics or humming a melody, etc
 - Build playlists from random/combined list based on x,y,z 
 - Social sign on ( AM, Spotify )
 - Allow 3 "syncs" per user and then charge   
