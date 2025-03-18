@@ -3,7 +3,6 @@
 Sync your music 
 Api and other infrastructure modules needed to run sym's backend locally
 Needs a bit of extra config if you wanted to host this as is - mainly around dozzle and nginx
-I use a private repo with a bit more security concerns
 
 ## Purpose
 
