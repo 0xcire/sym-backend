@@ -1,0 +1,16 @@
+services:
+  sym-api:  
+    # image: ${SYM_API_IMAGE:-docker.io/c1re/sym-api}
+    container_name: sym-api
+    hostname: sym-api
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    profiles: ["sym-api", "all"]
+    ports: 
+      - "1338:1338"
+    networks:
+      - sym-backend
+    env_file: .env # meh
+    restart: unless-stopped
+

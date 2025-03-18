@@ -1,0 +1,15 @@
+services:
+  redis:
+    image: ${REDIS_IMAGE:-redis:7.4.2}
+    hostname: cire-redis
+    container_name: cire-redis
+    profiles: ["redis", "all"]
+    networks: 
+      - sym-backend
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+

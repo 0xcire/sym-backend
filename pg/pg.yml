@@ -1,0 +1,23 @@
+services:
+  db:
+    image: ${POSTGRES_IMAGE:-postgres:17.4} 
+    hostname: cire-db
+    container_name: cire-db
+    profiles: ["pg", "all"]
+    networks:
+      - sym-backend
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGPASSWORD: ${PGPASSWORD}
+    volumes:
+      - ./init.sh:/docker-entrypoint-initdb.d/init.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_USER} -U $${POSTGRES_USER}"]
+      interval: 2s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped

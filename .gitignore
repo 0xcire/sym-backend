@@ -9,8 +9,12 @@
 .temp
 .tmp
 
+.DS_Store
+
 # Runtime data
 pids
 *.pid
 *.seed
 *.pid.lock
+
+.qodo

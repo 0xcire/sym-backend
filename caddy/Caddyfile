@@ -1,0 +1,7 @@
+sym-dozzle.localhost {
+  reverse_proxy sym-dozzle:8080
+}
+
+sym-api.localhost {
+  reverse_proxy sym-api:1338
+}

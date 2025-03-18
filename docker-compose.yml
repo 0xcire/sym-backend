@@ -1,2 +1,16 @@
-services:
+name: sym-backend
+include:
+  - caddy/caddy.yml
+  - dozzle/dozzle.yml
+  - minio/minio.yml
+  - pg/pg.yml
+  - rabbitmq/rabbitmq.yml
+  - redis/redis.yml
+  - sym-api/sym-api.yml
+
+networks:
+  sym-backend:
+    driver: bridge
+
+# volumes:
   
