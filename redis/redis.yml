@@ -4,6 +4,8 @@ services:
     hostname: cire-redis
     container_name: cire-redis
     profiles: ["redis", "all"]
+    ports:
+      - "6379:6379"
     networks: 
       - sym-backend
     healthcheck:
